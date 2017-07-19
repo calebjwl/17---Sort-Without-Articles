@@ -52,13 +52,12 @@ function strip(bandName) {
   return bandName.replace(/^(a |the |an )/i, '').trim();
 }
 
-const sortedBands = bands.sort((a, b) => a > b ? 1 : -1);
-const filteredBands = sortedBands.filter(band =>
-  !( band.includes('A ') || band.includes('The') || band.includes('An ') )
-);
+const sortedBands = bands.sort((a, b) => strip(a) > strip(b) ? 1 : -1);
+// const filteredBands = sortedBands.filter(band =>
+//   !( band.includes('A ') || band.includes('The') || band.includes('An ') )
+// );
 
 console.log(sortedBands);
-console.log(filteredBands);
 
 </script>
 
